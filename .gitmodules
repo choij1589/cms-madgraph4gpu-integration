@@ -1,0 +1,6 @@
+[submodule "tdr-style"]
+	path = tdr-style
+	url = https://github.com/cbernet/tdr-style.git
+[submodule "python/tdr-style"]
+	path = python/tdr-style
+	url = https://github.com/cbernet/tdr-style.git
