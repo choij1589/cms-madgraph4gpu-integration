@@ -6,5 +6,5 @@ Timing results stored in ```results/EvtGen.json``` file.
 To generate plots, do 
 ```bash
 source setup.sh
-scripts/makePlots.sh``` script
+scripts/makePlots.sh
 ```
