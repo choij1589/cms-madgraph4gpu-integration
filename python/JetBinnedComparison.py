@@ -34,7 +34,7 @@ logging.debug(f"dataset: {dataset}")
 # Make a canvas
 canvas = ROOT.TCanvas("canvas", "", 800, 800)
 labels = list(dataset.keys())
-colors = [ROOT.kBlack, ROOT.kRed, ROOT.kBlue, ROOT.kMagenta, ROOT.kGreen, ROOT.kViolet]
+colors = [ROOT.kBlack, ROOT.kAzure, ROOT.kBlue, ROOT.kViolet, ROOT.kGreen, ROOT.kRed]
 mg = ROOT.TMultiGraph()
 
 for i, (label, dataset) in enumerate(dataset.items()):
@@ -74,6 +74,8 @@ canvas.cd()
 # Draw with line
 mg.Draw("ALP")
 legend = canvas.BuildLegend()
+legend.SetFillStyle(0)
+legend.SetBorderSize(0)
 legend.SetX1(0.7)
 legend.SetY1(0.7)
 legend.SetX2(0.92)
@@ -85,10 +87,6 @@ latex = ROOT.TLatex()
 latex.SetTextSize(tmpTextSize)
 textSize = latex.GetTextSize()
 
-latex.SetTextFont(42)
-latex.SetTextSize(textSize*0.6/0.75)
-latex.DrawLatexNDC(0.845, 0.954, "13.6 TeV")
-
 latex.SetTextFont(61)
 latex.SetTextSize(textSize)
 latex.DrawLatexNDC(0.202, 0.88, "CMS")
@@ -97,6 +95,10 @@ latex.SetTextFont(52)
 latex.SetTextSize(textSize*0.76)
 latex.DrawLatexNDC(0.202, 0.83, "Simulation")
 latex.DrawLatexNDC(0.282, 0.88, "Preliminary")
+
+latex.SetTextFont(42)
+latex.SetTextSize(textSize)
+latex.DrawLatexNDC(0.25, 0.77, f"{PROCESS} ({BACKEND})")
 
 output_path = f"{WORKDIR}/plots/JetBinned_{PROCESS}.pdf"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
