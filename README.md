@@ -6,7 +6,6 @@ For the test purpose, the node with nvidia-A100 GPU is necessary. Here is the li
 - SNU gamsa, with 2 RTX3090 GPUs. Good and fast for testing purpose, but as gaming GPUs do not support double precision, the results won’t be reliable.
 
 You can find the installation instruction here:
-
 [cudacpp-instruction](https://github.com/madgraph5/madgraph4gpu/wiki/Working-with-cudacpp-v1.00.00-(October-2024))
 
 Currently for the testing purpose, many issue might occur, strongly suggest install in development mode.
@@ -36,10 +35,9 @@ mv mg4gpu_${DATE}.tar.gz $WORKDIR/tarballs
 ```
 
 Download genproduction repo. You can see general instruction for producing CMS gridpacks here:
-
 [how to produce MG5 gridpacks](https://twiki.cern.ch/twiki/bin/view/CMS/QuickGuideMadGraph5aMCatNLO)
 
-We should modify ``gridpack_generation.sh``` to point the mg4gpu tarball.
+We should modify ```gridpack_generation.sh``` to point the mg4gpu tarball.
 ```bash
 # Download genproduction
 cd $WORKDIR
